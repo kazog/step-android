@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.step.androd"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 打包配置
+    signingConfigs {
+        debug {
+            storeFile file('debug123.keystore')
+            storePassword 'debug123'
+            keyAlias 'debug123'
+            keyPassword 'debug123'
+        }
+    }
+
+    // 打包类型
+    buildTypes {
+        debug {
+            manifestPlaceholders = [YUE_VALUE: "amp_debug_xxxxxkey"]
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+        release {
+            // 清单文件 meta_data标签，占位符标识${YUE_VALUE}的值
+            manifestPlaceholders = [YUE_VALUE: "amp_release_xxxxxkey"]
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        // flutter 配置
+//        beta {
+//            matchingFallbacks = ['debug', 'release']
+//        }
+    }
+
+    // -=-=-=-=-=-=-=-=-=-=-=-渠道包配置=-=--=-=-=-=-=-=-=-=-=
+    // 3.0版本Gradle开始必须添加
+    flavorDimensions "default"
+    /** 渠道配置
+     *  使用productFlavors，添加2个渠道，例如xiaomi和huawei。
+     注意如果是3.0版本的Gradle，必须要添加上flavorDimensions纬度。
+     使用 manifestPlaceholders，增加清单文件占位，格式：[占位名:值, 占位名:值] // 可以多个值
+
+     清单文件增加占位标识
+     增加一个meta_data标签，
+     标签名为CHANNEL_NAME，值是占位符标识${CHANNEL_VALUE}。- 要与manifestPlaceholders占位符名称一致
+     <meta-data
+     android:name="CHANNEL_NAME"
+     android:value="${CHANNEL_VALUE}" />
+
+     渠道读取
+     PackageManager pm = context.getPackageManager();
+     ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+     appInfo.metaData.getString("channel");
+     */
+    productFlavors {
+        app {manifestPlaceholders = [CHANNEL_VALUE: "app"]}
+//        huawei {manifestPlaceholders = [CHANNEL_VALUE: "huawei"]}
+//        xiaomi {manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]}
+//        // 上面和下面这些写法效果一样
+////        huawei {}
+////        xiaomi {}
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
