@@ -36,8 +36,8 @@ package com.step.androd.modules.nanohttpd.samples.debug;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.bthome.bnj.modules.nanohttpd.core.NanoHTTPD;
-import com.bthome.bnj.modules.nanohttpd.core.util.ServerRunner;
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD;
+import com.step.androd.modules.nanohttpd.core.util.ServerRunner;
 
 public class DebugServer extends NanoHTTPD {
 

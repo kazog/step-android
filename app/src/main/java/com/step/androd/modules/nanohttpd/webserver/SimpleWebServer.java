@@ -32,8 +32,8 @@ package com.step.androd.modules.nanohttpd.webserver;
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  * #L%
  */
-import com.bthome.bnj.modules.nanohttpd.core.NanoHTTPD;
-import com.bthome.bnj.modules.nanohttpd.core.util.ServerRunner;
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD;
+import com.step.androd.modules.nanohttpd.core.util.ServerRunner;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

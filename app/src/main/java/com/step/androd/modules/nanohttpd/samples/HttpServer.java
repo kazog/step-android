@@ -1,6 +1,6 @@
 package com.step.androd.modules.nanohttpd.samples;
 
-import com.bthome.bnj.modules.nanohttpd.websocket.NanoWSD;
+import com.step.androd.modules.nanohttpd.websocket.NanoWSD;
 
 import java.net.URL;
 import java.util.Arrays;

@@ -33,7 +33,7 @@ package com.step.androd.modules.nanohttpd.websocket.echo;
  * #L%
  */
 
-import com.bthome.bnj.modules.nanohttpd.websocket.NanoWSD;
+import com.step.androd.modules.nanohttpd.websocket.NanoWSD;
 
 import java.io.IOException;
 

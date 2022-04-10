@@ -33,8 +33,8 @@ package com.step.androd.modules.nanohttpd.samples;
  * #L%
  */
 
-import com.bthome.bnj.modules.nanohttpd.core.NanoHTTPD;
-import com.bthome.bnj.modules.nanohttpd.core.util.ServerRunner;
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD;
+import com.step.androd.modules.nanohttpd.core.util.ServerRunner;
 
 import java.util.Map;
 import java.util.logging.Logger;

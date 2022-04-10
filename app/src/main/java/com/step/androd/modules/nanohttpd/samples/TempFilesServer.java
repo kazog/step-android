@@ -33,9 +33,9 @@ package com.step.androd.modules.nanohttpd.samples;
  * #L%
  */
 
-import com.bthome.bnj.modules.nanohttpd.core.NanoHTTPD;
-import com.bthome.bnj.modules.nanohttpd.core.util.ServerRunner;
-import com.bthome.bnj.modules.nanohttpd.samples.debug.DebugServer;
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD;
+import com.step.androd.modules.nanohttpd.core.util.ServerRunner;
+import com.step.androd.modules.nanohttpd.samples.debug.DebugServer;
 
 import java.io.File;
 import java.util.ArrayList;

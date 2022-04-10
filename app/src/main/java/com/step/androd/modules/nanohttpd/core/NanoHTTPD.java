@@ -97,8 +97,8 @@ import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 
-import com.bthome.bnj.modules.nanohttpd.core.NanoHTTPD.Response.*;
-import com.bthome.bnj.modules.nanohttpd.samples.HttpServer;
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD.Response.*;
+import com.step.androd.modules.nanohttpd.samples.HttpServer;
 
 /**
  * A simple, tiny, nicely embeddable HTTP server in Java

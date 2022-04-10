@@ -36,8 +36,8 @@ package com.step.androd.modules.nanohttpd.webserver;
 import java.io.ByteArrayInputStream;
 import java.util.Map;
 
-import com.bthome.bnj.modules.nanohttpd.core.NanoHTTPD;
-import com.bthome.bnj.modules.nanohttpd.core.NanoHTTPD.Response;
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD;
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD.Response;
 
 
 /**

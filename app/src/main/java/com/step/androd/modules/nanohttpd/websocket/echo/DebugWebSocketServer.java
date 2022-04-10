@@ -33,7 +33,9 @@ package com.step.androd.modules.nanohttpd.websocket.echo;
  * #L%
  */
 
-import com.bthome.bnj.modules.nanohttpd.websocket.NanoWSD;
+
+import com.step.androd.modules.nanohttpd.core.NanoHTTPD;
+import com.step.androd.modules.nanohttpd.websocket.NanoWSD;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -57,7 +59,7 @@ public class DebugWebSocketServer extends NanoWSD {
     }
 
     @Override
-    protected WebSocket openWebSocket(IHTTPSession handshake) {
+    protected WebSocket openWebSocket(NanoHTTPD.IHTTPSession handshake) {
         return new DebugWebSocket(this, handshake);
     }
 
@@ -65,7 +67,7 @@ public class DebugWebSocketServer extends NanoWSD {
 
         private final DebugWebSocketServer server;
 
-        public DebugWebSocket(DebugWebSocketServer server, IHTTPSession handshakeRequest) {
+        public DebugWebSocket(DebugWebSocketServer server, NanoHTTPD.IHTTPSession handshakeRequest) {
             super(handshakeRequest);
             this.server = server;
         }
